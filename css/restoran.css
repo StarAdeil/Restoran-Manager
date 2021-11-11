@@ -8,6 +8,12 @@ body{
     color:red;
     font-family: 'Goblin One', cursive;
 }
+.restoranInfo{
+	padding: 5px;
+	background-color:brown;
+	margin:10px;
+	font-size: 16px;
+}
 li{
 	list-style-type: none;
 }

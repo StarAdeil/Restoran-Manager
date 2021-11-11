@@ -213,6 +213,7 @@ function CreateTable(client,count,name){
 				menuElemCheck();
 			}
 		}
+		
 	}
 	/********************************/
 	/*Скрываем меню заказа при нажатии кнопки*/
@@ -234,18 +235,20 @@ function CreateTable(client,count,name){
 	/*Выбираем елементы меню и формируем цену*/
 	/********************************/
 	function menuElemCheck(){
-		let menuElem = document.querySelectorAll('.menuElemFree');
+		let menuElem = document.getElementsByClassName("menuElemFree");
 		let menuResult = document.querySelectorAll(".sumResult");
 		let metka = "";
 			for(let i = 0 ; i < menuElem.length ; i++){
-				menuElem[i].onclick = function (){
+				menuElem[i].onclick = function(){
 					menuElem[i].style.color = "green";
 					menuElem[i].setAttribute("class","menuElemCheck");
 					metka = menuElem[i].getAttribute('data-number-order');
 					menuResult[metka-1].innerHTML = sum(menuElem[i]);
-					menuElemFree();
+				menuElemFree();
 				};
+				
 			};
+			
 	};
 	/********************************/
 	/*Убираем выделение с елементов меню*/
@@ -260,9 +263,12 @@ function CreateTable(client,count,name){
 				menuElem[i].setAttribute("class","menuElemFree");
 				metka = menuElem[i].getAttribute('data-number-order');
 				menuResult[metka-1].innerHTML = sum(menuElem[i]);
-				menuElemCheck();
+				
+			menuElemCheck();
 			};
+			
 		};
+		
 	}
 	/********************************/
 	/*Cумма по выдиленным елементам меню*/
